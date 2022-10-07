@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalkulator", "Kalkulator\Ka
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfejs_Dodawania_Studenta", "Interfejs_Dodawania_Studenta\Interfejs_Dodawania_Studenta.csproj", "{89CEC7CC-BFE0-4D31-8B5B-EC7084D83A10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockPanel_Odtwarzanie", "DockPanel_Odtwarzanie\DockPanel_Odtwarzanie.csproj", "{1E23D6B4-F421-4F6F-9D8D-31E9D3BB8A29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{89CEC7CC-BFE0-4D31-8B5B-EC7084D83A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89CEC7CC-BFE0-4D31-8B5B-EC7084D83A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89CEC7CC-BFE0-4D31-8B5B-EC7084D83A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E23D6B4-F421-4F6F-9D8D-31E9D3BB8A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E23D6B4-F421-4F6F-9D8D-31E9D3BB8A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E23D6B4-F421-4F6F-9D8D-31E9D3BB8A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E23D6B4-F421-4F6F-9D8D-31E9D3BB8A29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
