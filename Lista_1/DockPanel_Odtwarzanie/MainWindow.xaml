@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DockPanel_Odtwarzanie"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
-    <DockPanel>
+    <!--<DockPanel> //old version
         <Button DockPanel.Dock="Bottom">Bottom</Button>
         <Button DockPanel.Dock="Left">Left</Button>
         <Button DockPanel.Dock="Right">Right</Button>
@@ -16,5 +16,16 @@
         <Button DockPanel.Dock="left" Width="150">Fill</Button>
         <Button DockPanel.Dock="Right" Height="50">Right2</Button>
         <Button DockPanel.Dock="Right" Height="50">Right3</Button>
+    </DockPanel>-->
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom">Bottom</Button>
+        <Button DockPanel.Dock="Left">Left</Button>
+        <Button DockPanel.Dock="Right">Right</Button>
+        <Button DockPanel.Dock="Top" Height="50" Background="Red">Top</Button>
+        <Button DockPanel.Dock="Top" Height="100" Width="100" Background="Green">Top2</Button>
+        <Button DockPanel.Dock="Right" Height="50">Right2</Button>
+        <Button DockPanel.Dock="Right" Height="50">Right3</Button>
+        <Button DockPanel.Dock="top" Background="Blue">Top3</Button>
+        <Button>Fill</Button>
     </DockPanel>
 </Window>
