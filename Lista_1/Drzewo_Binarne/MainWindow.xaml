@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Drzewo_Binarne"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="300" Width="300">
+    <Canvas>
+        <Button Canvas.Left="125" Canvas.Top="25" Height="50" Width="50" FontSize="25">1</Button>
 
-    </Grid>
+        <Button Canvas.Left="75" Canvas.Top="100" Height="50" Width="50" FontSize="25">11</Button>
+        <Button Canvas.Left="175" Canvas.Top="100" Height="50" Width="50" FontSize="25">12</Button>
+
+        <Button Canvas.Left="25" Canvas.Top="185" Height="50" Width="50" FontSize="25">111</Button>
+        <Button Canvas.Left="90" Canvas.Top="185" Height="50" Width="50" FontSize="25">112</Button>
+        <Button Canvas.Left="160" Canvas.Top="185" Height="50" Width="50" FontSize="25">121</Button>
+        <Button Canvas.Left="225" Canvas.Top="185" Height="50" Width="50" FontSize="25">122</Button>
+    </Canvas>
 </Window>
