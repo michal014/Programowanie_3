@@ -42,14 +42,14 @@ namespace Kalkulator
                     number1 = number1 + (((Button)sender).Tag).ToString();
                     display.Content = number1;
                 }
-                else if (number1 != "0" && (((Button)sender).Tag).ToString() != "0")
-                {
-                    number1 = number1 + (((Button)sender).Tag).ToString();
-                    display.Content = number1;
-                }
                 else if (number1 == "0" && (((Button)sender).Tag).ToString() != "0")
                 {
                     number1 = (((Button)sender).Tag).ToString();
+                    display.Content = number1;
+                }
+                else if (number1 != "0")
+                {
+                    number1 = number1 + (((Button)sender).Tag).ToString();
                     display.Content = number1;
                 }
             }
@@ -65,14 +65,14 @@ namespace Kalkulator
                     number2 = number2 + (((Button)sender).Tag).ToString();
                     display.Content = number2;
                 }
-                else if (number2 != "0" && (((Button)sender).Tag).ToString() != "0")
-                {
-                    number2 = number2 + (((Button)sender).Tag).ToString();
-                    display.Content = number2;
-                }
                 else if (number2 == "0" && (((Button)sender).Tag).ToString() != "0")
                 {
                     number2 = (((Button)sender).Tag).ToString();
+                    display.Content = number2;
+                }
+                else if (number2 != "0")
+                {
+                    number2 = number2 + (((Button)sender).Tag).ToString();
                     display.Content = number2;
                 }
             }
@@ -157,28 +157,28 @@ namespace Kalkulator
         {
             if (sign == "+")
             {
-                number1 = Convert.ToString(Convert.ToDouble(number1) + Convert.ToDouble(number2));
+                number1 = Convert.ToString(Math.Round(Convert.ToDouble(number1) + Convert.ToDouble(number2),10));
                 number2 = null;
                 sign = null;
                 display.Content = number1;
             }
             else if (sign == "-")
             {
-                number1 = Convert.ToString(Convert.ToDouble(number1) - Convert.ToDouble(number2));
+                number1 = Convert.ToString(Math.Round(Convert.ToDouble(number1) - Convert.ToDouble(number2),10));
                 number2 = null;
                 sign = null;
                 display.Content = number1;
             }
             else if (sign == "*")
             {
-                number1 = Convert.ToString(Convert.ToDouble(number1) * Convert.ToDouble(number2));
+                number1 = Convert.ToString(Math.Round(Convert.ToDouble(number1) * Convert.ToDouble(number2),10));
                 number2 = null;
                 sign = null;
                 display.Content = number1;
             }
             else if (sign == "/" && number2 != "0")
             {
-                number1 = Convert.ToString(Convert.ToDouble(number1) / Convert.ToDouble(number2));
+                number1 = Convert.ToString(Math.Round(Convert.ToDouble(number1) / Convert.ToDouble(number2),10));
                 number2 = null;
                 sign = null;
                 display.Content = number1;
@@ -191,5 +191,6 @@ namespace Kalkulator
                 sign = null;
             }
         }
+
     }
 }
