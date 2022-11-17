@@ -17,7 +17,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Tag="0" x:Name="bt0" Grid.Row="0" Grid.Column="0" Click="Button_Click" FontSize="100"></Button>
+        <Button Tag="0" x:Name="bt0" Grid.Row="0" Grid.Column="0"  Click="Button_Click" FontSize="100"></Button>
         <Button Tag="1" x:Name="bt1" Grid.Row="0" Grid.Column="1"  Click="Button_Click" FontSize="100"></Button>
         <Button Tag="2" x:Name="bt2" Grid.Row="0" Grid.Column="2"  Click="Button_Click" FontSize="100"></Button>
         <Button Tag="3" x:Name="bt3" Grid.Row="1" Grid.Column="0"  Click="Button_Click" FontSize="100"></Button>
