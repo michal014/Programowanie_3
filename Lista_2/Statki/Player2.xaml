@@ -7,9 +7,13 @@
         mc:Ignorable="d"
 
         Title="Player2" Height="704" Width="1344">
+        <Window.Resources>
+            <local:GameValueToResourceConverter x:Key="GameValueToResourceConverter"/>
+            <local:GameValueToResourceConverter2 x:Key="GameValueToResourceConverter2"/>
+        </Window.Resources>
         <Grid x:Name="p2_board">
 
-            <Grid.Resources>
+            <!--<Grid.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Background">
                         <Setter.Value>
@@ -17,7 +21,7 @@
                         </Setter.Value>
                     </Setter>
                 </Style>
-            </Grid.Resources>
+            </Grid.Resources>-->
 
             <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

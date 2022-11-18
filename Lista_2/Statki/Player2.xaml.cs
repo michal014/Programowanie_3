@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,28 +29,39 @@ namespace Statki
         private void G2_Shoot(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            MainWindow.player2[Convert.ToInt16(button.Tag)] += 1;
+            if (((Game)p2_board.DataContext).Player2[Convert.ToInt32(button.Tag.ToString())] == 0)
+                ((Game)p2_board.DataContext).Player2[Convert.ToInt32(button.Tag.ToString())]++;
+            else if (((Game)p2_board.DataContext).Player2[Convert.ToInt32(button.Tag.ToString())] == 1)
+                ((Game)p2_board.DataContext).Player2[Convert.ToInt32(button.Tag.ToString())]--;
         }
         private void G1_Shoot(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            MainWindow.player1[Convert.ToInt16(button.Tag)] += 2;
+            if (((Game)p2_board.DataContext).Player1[Convert.ToInt32(button.Tag.ToString())] == 0 || ((Game)p2_board.DataContext).Player1[Convert.ToInt32(button.Tag.ToString())] == 1)
+                ((Game)p2_board.DataContext).Player1[Convert.ToInt32(button.Tag.ToString())] += 2;
         }
 
         private void CreatButtons()
         {
+            GameValueToResourceConverter converter = new GameValueToResourceConverter();
+            GameValueToResourceConverter2 converter2 = new GameValueToResourceConverter2();
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    Button btn = new Button();
+                    Button button = new Button();
                     {
-                        Tag = ((i * 10) + j);
-                        Grid.SetRow(btn, i + 1);
-                        Grid.SetColumn(btn, j);
+                        Grid.SetRow(button, i + 1);
+                        Grid.SetColumn(button, j);
                     };
-                    btn.Click += new RoutedEventHandler(G2_Shoot);
-                    this.p2_board.Children.Add(btn);
+                    button.Tag = ((i * 10) + j);
+                    Binding binding = new Binding();
+                    binding.Converter = converter;
+                    binding.Mode = BindingMode.TwoWay;
+                    binding.Path = new PropertyPath("Player2[" + ((i * 10) + j) + "]");
+                    button.SetBinding(Button.BackgroundProperty, binding);
+                    button.Click += new RoutedEventHandler(G2_Shoot);
+                    this.p2_board.Children.Add(button);
                 }
             }
 
@@ -57,17 +69,24 @@ namespace Statki
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    Button btn = new Button();
+                    Button button = new Button();
                     {
-                        Tag = ((i * 10) + j);
-                        Grid.SetRow(btn, i + 1);
-                        Grid.SetColumn(btn, j + 11);
+                        Grid.SetRow(button, i + 1);
+                        Grid.SetColumn(button, j + 11);
                     };
-                    btn.Click += new RoutedEventHandler(G1_Shoot);
-                    this.p2_board.Children.Add(btn);
+                    button.Tag = ((i * 10) + j);
+                    Binding binding = new Binding();
+                    binding.Converter = converter2;
+                    binding.Mode = BindingMode.TwoWay;
+                    binding.Path = new PropertyPath("Player1[" + ((i * 10) + j) + "]");
+                    button.SetBinding(Button.BackgroundProperty, binding);
+                    button.Click += new RoutedEventHandler(G1_Shoot);
+                    this.p2_board.Children.Add(button);
                 }
             }
         }
+
+
 
     }
 }
