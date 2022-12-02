@@ -1,0 +1,9 @@
+﻿<Application x:Class="Wyswietlanie_danych_i_serializacja.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Wyswietlanie_danych_i_serializacja"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
