@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wyswietlanie_danych_i_serializacja"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGridPerson" Grid.RowSpan="6" Grid.ColumnSpan="5" Margin="-7,0,0,0"></DataGrid>
+        <Button Click="Add" Grid.Row="7" Content="Dodaj"/>
+        <Button Click="Edit" Grid.Row="7" Grid.Column="1" Content="Edytuj"/>
+        <Button Click="Delete" Grid.Row="7" Grid.Column="2" Content="Usuń"/>
+        <Button Click="Save" Grid.Row="7" Grid.Column="3" Content="Zapisz"/>
+        <Button Click="Load" Grid.Row="7" Grid.Column="4" Content="Wczytaj"/>
     </Grid>
 </Window>
