@@ -1,0 +1,51 @@
+﻿<Window x:Class="Kalkulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kalkulator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Name="display" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.ColumnSpan="5">0</Label>
+
+        <Button Tag="1" FontSize="50" Grid.Row="3" Grid.Column="0" Click="Number_Click">1</Button>
+        <Button Tag="2" FontSize="50" Grid.Row="3" Grid.Column="1" Click="Number_Click">2</Button>
+        <Button Tag="3" FontSize="50" Grid.Row="3" Grid.Column="2" Click="Number_Click">3</Button>
+
+        <Button Tag="4" FontSize="50" Grid.Row="2" Grid.Column="0" Click="Number_Click">4</Button>
+        <Button Tag="5" FontSize="50" Grid.Row="2" Grid.Column="1" Click="Number_Click">5</Button>
+        <Button Tag="6" FontSize="50" Grid.Row="2" Grid.Column="2" Click="Number_Click">6</Button>
+
+        <Button Tag="7" FontSize="50" Grid.Row="1" Grid.Column="0" Click="Number_Click">7</Button>
+        <Button Tag="8" FontSize="50" Grid.Row="1" Grid.Column="1" Click="Number_Click">8</Button>
+        <Button Tag="9" FontSize="50" Grid.Row="1" Grid.Column="2" Click="Number_Click">9</Button>
+
+        <Button Tag="0" FontSize="50" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Click="Number_Click">0</Button>
+        <Button Tag="," FontSize="50" Grid.Row="4" Grid.Column="2" Click="Number_Click">.</Button>
+
+        <Button FontSize="50" Grid.Row="1" Grid.Column="3" Click="Add">+</Button>
+        <Button FontSize="50" Grid.Row="1" Grid.Column="4" Click="Sub">-</Button>
+
+        <Button FontSize="50" Grid.Row="2" Grid.Column="3" Click="Mul">*</Button>
+        <Button FontSize="50" Grid.Row="2" Grid.Column="4" Click="Div">/</Button>
+
+        <Button FontSize="50" Grid.Row="3" Grid.Column="3" Grid.RowSpan="2" Click="Clean">C</Button>
+        <Button FontSize="50" Grid.Row="3" Grid.Column="4" Grid.RowSpan="2" Click="Result">=</Button>
+
+    </Grid>
+</Window>

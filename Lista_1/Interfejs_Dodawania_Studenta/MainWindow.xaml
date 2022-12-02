@@ -1,0 +1,28 @@
+﻿<Window x:Class="Interfejs_Dodawania_Studenta.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interfejs_Dodawania_Studenta"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="450">
+    <StackPanel>
+        <StackPanel Margin="5px" Orientation="Horizontal">
+            <Label Margin="5px" >Imię: </Label>
+            <TextBox Margin="10px"  Width="200"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="5px" Orientation="Horizontal">
+            <Label Margin="5px">Nazwisko: </Label>
+            <TextBox Margin="10px" Width="200"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="5px" Orientation="Horizontal">
+            <Label Margin="5px">Data Urodzenia: </Label>
+            <TextBox Margin="10px" Width="200"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="5px" Orientation="Horizontal">
+            <Label Margin="5px">Semestr: </Label>
+            <TextBox Margin="10px" Width="200"></TextBox>
+        </StackPanel>
+        <Button Margin="10px">Dodaj</Button>
+    </StackPanel>
+</Window>
