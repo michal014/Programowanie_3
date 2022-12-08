@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Wyswietlanie_danych_i_serializacja
 {
-    class Person
+    [XmlRoot(ElementName = "Persons")]
+    public class Person
     {
+        [XmlAttribute("FirstName")]
         public string firstName { get; set; }
+        [XmlAttribute("lastName")]
         public string lastName { get; set; }
+        [XmlAttribute("gender")]
         public string gender { get; set; }
+        [XmlAttribute("pesel")]
         public string pesel { get; set; }
         
 

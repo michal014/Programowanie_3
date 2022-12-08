@@ -17,17 +17,18 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="160*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGridPerson" Grid.RowSpan="6" Grid.ColumnSpan="5" Margin="-7,0,0,0"></DataGrid>
-        <Button Click="Add" Grid.Row="7" Content="Dodaj"/>
-        <Button Click="Edit" Grid.Row="7" Grid.Column="1" Content="Edytuj"/>
-        <Button Click="Delete" Grid.Row="7" Grid.Column="2" Content="Usuń"/>
-        <Button Click="Save" Grid.Row="7" Grid.Column="3" Content="Zapisz"/>
-        <Button Click="Load" Grid.Row="7" Grid.Column="4" Content="Wczytaj"/>
+        <DataGrid x:Name="dataGridPerson" Grid.RowSpan="6" Grid.ColumnSpan="6" Margin="-4,-5,-4,5" Loaded="dataGridPerson_Loaded"></DataGrid>
+        <Button Click="Add" Grid.Row="5" Content="Dodaj" Margin="0,55,0,0" Grid.RowSpan="2"/>
+        <Button Click="Edit" Grid.Row="5" Grid.Column="1" Content="Edytuj" Margin="0,55,0,0" Grid.RowSpan="2"/>
+        <Button Click="Delete" Grid.Row="5" Grid.Column="2" Content="Usuń" Grid.ColumnSpan="2" Margin="0,55,0,0" Grid.RowSpan="2"/>
+        <Button Click="Save" Grid.Row="5" Grid.Column="4" Content="Zapisz" Margin="0,55,0,0" Grid.RowSpan="2"/>
+        <Button Click="Load" Grid.Row="5" Grid.Column="5" Content="Wczytaj" Margin="0,55,0,0" Grid.RowSpan="2"/>
     </Grid>
 </Window>

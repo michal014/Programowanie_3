@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,11 +31,13 @@ namespace Wyswietlanie_danych_i_serializacja
             dataGridPerson.ItemsSource = personsList;
         }
 
+
+        
         private void Add(object sender, RoutedEventArgs e)
         {
             WindowAddPerson window1 = new WindowAddPerson();
-            Person person= new Person();
-            window1.DataContext= person;
+            Person person = new Person();
+            window1.DataContext = person;
             window1.ShowDialog();
             if (window1.shouldBeSaved)
             {
@@ -42,7 +48,7 @@ namespace Wyswietlanie_danych_i_serializacja
 
         private void Edit(object sender, RoutedEventArgs e)
         {
-            if (personsList.Count > 0)
+            if (personsList.Count > 0 && dataGridPerson.SelectedItem != null)
             {
                 WindowAddPerson window2 = new WindowAddPerson();
                 Person person2 = new Person((Person)dataGridPerson.SelectedItem);
@@ -58,7 +64,7 @@ namespace Wyswietlanie_danych_i_serializacja
 
         private void Delete(object sender, RoutedEventArgs e)
         {
-            if (personsList.Count > 0)
+            if (personsList.Count > 0 && dataGridPerson.SelectedItem != null)
             {
                 personsList.RemoveAt(personsList.IndexOf((Person)dataGridPerson.SelectedItem));
                 dataGridPerson.Items.Refresh();
@@ -67,12 +73,54 @@ namespace Wyswietlanie_danych_i_serializacja
 
         private void Save(object sender, RoutedEventArgs e)
         {
-
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Plik xml|*.xml";
+            sfd.Title = "Podaj nazwę pliku do zapisu danych";
+            sfd.ShowDialog();
+            if (sfd.FileName != "")
+            {
+                try
+                {
+                    Serialization.SerializeToXml<List<Person>>(personsList, sfd.FileName);
+                }
+                catch
+                {
+                    MessageBox.Show("Nie udało się zapisać pliku");
+                }
+            }
         }
 
         private void Load(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Plik xml|*.xml";
+            ofd.Title = "Podaj nazwę pliku do odczytu danych";
+            ofd.ShowDialog();
+            if (ofd.FileName != "")
+            {
+                try
+                {
+                    personsList = Serialization.DeserializeToObject<List<Person>>(ofd.FileName);
+                }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("Plik xml jest uszkodzony nie można przeprowadzić odczytu");
+                }
+                catch
+                {
+                    MessageBox.Show("Nie udało się otworzyć pliku");
+                }
+            }
+            dataGridPerson.ItemsSource = personsList;
+            dataGridPerson.Items.Refresh();
+        }
 
+        private void dataGridPerson_Loaded(object sender, RoutedEventArgs e)
+        {
+            dataGridPerson.Columns[0].Header = "Imię";
+            dataGridPerson.Columns[1].Header = "Nazwisko";
+            dataGridPerson.Columns[2].Header = "Płeć";
+            dataGridPerson.Columns[3].Header = "PESEL";
         }
     }
 }
