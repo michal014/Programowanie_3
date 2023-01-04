@@ -1,0 +1,16 @@
+﻿<Window x:Class="Lista_6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lista_6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Canvas>
+        <Button Width="100" Height="30" Canvas.Left="140" Canvas.Top="15" Click="DBSelectButton">Select</Button>
+        <Button Width="100" Height="30" Canvas.Left="280" Canvas.Top="15" Click="DBInsertButton">Insert</Button>
+        <Button Width="100" Height="30" Canvas.Left="420" Canvas.Top="15" Click="DBUpdateButton">Update</Button>
+        <Button Width="100" Height="30" Canvas.Left="560" Canvas.Top="15" Click="DBDeleteButton">Delete</Button>
+        <DataGrid Width="765" Height="345" Canvas.Left="10" Canvas.Top="60" x:Name="dataGridPerson" Loaded="dataGridPerson_Loaded"></DataGrid>
+    </Canvas>
+</Window>
