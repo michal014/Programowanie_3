@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wyswietlanie_danych_i_serializacja"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="160*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGridPerson" Grid.RowSpan="6" Grid.ColumnSpan="6" Margin="-4,-5,-4,5" Loaded="dataGridPerson_Loaded"></DataGrid>
+        <Button Click="Add" Grid.Row="5" Content="Dodaj" Margin="0,55,0,0" Grid.RowSpan="2"/>
+        <Button Click="Edit" Grid.Row="5" Grid.Column="1" Content="Edytuj" Margin="0,55,0,0" Grid.RowSpan="2"/>
+        <Button Click="Delete" Grid.Row="5" Grid.Column="2" Content="Usuń" Grid.ColumnSpan="2" Margin="0,55,0,0" Grid.RowSpan="2"/>
+        <Button Click="Save" Grid.Row="5" Grid.Column="4" Content="Zapisz" Margin="0,55,0,0" Grid.RowSpan="2"/>
+        <Button Click="Load" Grid.Row="5" Grid.Column="5" Content="Wczytaj" Margin="0,55,0,0" Grid.RowSpan="2"/>
     </Grid>
 </Window>
