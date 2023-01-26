@@ -1,6 +1,7 @@
 ﻿USE [master]
 GO
 /****** Object:  Database [videoteka]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Database [videoteka]    Script Date: 27.01.2023 00:02:18 ******/
 CREATE DATABASE [videoteka]
  CONTAINMENT = NONE
  ON  PRIMARY 

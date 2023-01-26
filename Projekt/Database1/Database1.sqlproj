@@ -59,7 +59,11 @@
     <Folder Include="Initialization" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Initialization\videoteka_Create.sql" />
-    <None Include="Initialization\Videoteka_Create_Example_Data.sql" />
+    <None Include="Initialization\videoteka_Create.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Initialization\Videoteka_Create_Example_Data.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
