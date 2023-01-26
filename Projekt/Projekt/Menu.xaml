@@ -1,0 +1,15 @@
+﻿<Window x:Class="Projekt.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        Title="Menu" Height="400" Width="215">
+    <Canvas>
+        <Label FontSize="40" FontFamily="Comis Sans MS" Canvas.Left="44" Canvas.Top="10">Menu</Label>
+        <Button Width="150" Height="30" Canvas.Left="25" Canvas.Top="80" Click="Items_List_Btn">Lista Pozycji</Button>
+        <Button Width="150" Height="30" Canvas.Left="25" Canvas.Bottom="80" Click="Btn_Click">Test</Button>
+        <Button Width="150" Height="30" Canvas.Left="25" Canvas.Bottom="30" Click="Btn_Exit">Wyjście</Button>
+    </Canvas>
+</Window>

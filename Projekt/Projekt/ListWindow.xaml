@@ -1,0 +1,26 @@
+﻿<Window x:Class="Projekt.ListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        Title="ListWindow" Height="600" Width="800" ResizeMode="NoResize" Closing="Window_Closing">
+    <DataGrid ItemsSource="{Binding}" x:Name="ListDataGrid" AutoGenerateColumns="False" PreviewMouseDoubleClick="ListDataGrid_PreviewMouseDoubleClick">
+        <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding Path=id}" Header="ID" Visibility="Hidden"/>
+            <DataGridTextColumn Binding="{Binding Path=name}" Header="Nazwa" Width="250"/>
+            <DataGridTextColumn Binding="{Binding Path=type}" Header="Typ" Width="110"/>
+            <DataGridTextColumn Binding="{Binding Path=numberOfEpisodes}" Header="Liczba Odcinków" Width="100"/>
+            <DataGridTextColumn Binding="{Binding Path=producer}" Header="Producent" Width="110"/>
+            <DataGridTextColumn Binding="{Binding Path=genre}" Header="gatunek" Width="110"/>
+            <DataGridTemplateColumn Header="Grafika">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding Path=picture}" Width="90" Height="160"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</Window>
