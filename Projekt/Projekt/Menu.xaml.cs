@@ -23,7 +23,11 @@ namespace Projekt
         public Menu()
         {
             InitializeComponent();
-
+            if(GlobalClass.isAdmin)
+            {
+                BtnAddContent.Visibility = Visibility.Visible;
+                BtnAddContent.IsEnabled = true;
+            }
         }
 
         private void Items_List_Btn(object sender, RoutedEventArgs e)
@@ -42,6 +46,13 @@ namespace Projekt
 
         private void Btn_Exit(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void BtnAddContent_Click(object sender, RoutedEventArgs e)
+        {
+            AddContentWindow adw = new AddContentWindow();
+            adw.Show();
             this.Close();
         }
     }

@@ -1,0 +1,29 @@
+﻿<Window x:Class="Projekt.AddContentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        Title="AddContentWindow" Height="450" Width="800" Closing="Window_Closing">
+    <Canvas>
+        <Label Content="Nazwa:" Canvas.Top="20" Canvas.Left="20"/>
+        <TextBox Text="{Binding Path=name,Mode=TwoWay}" Width="200" Height="20" Canvas.Top="50" Canvas.Left="20"/>
+        <Label Content="Typ:" Canvas.Top="80" Canvas.Left="20"/>
+        <TextBox Text="{Binding Path=type,Mode=TwoWay}" Width="100" Height="20" Canvas.Top="110" Canvas.Left="20"/>
+        <Label Content="Ilość odcinków:" Canvas.Top="140" Canvas.Left="20"/>
+        <TextBox Text="{Binding Path=numberofepisodes,Mode=TwoWay}" PreviewTextInput="NumberValidationTextBox" TextChanged="TextValidationTextBox" Width="100" Height="20" Canvas.Top="170" Canvas.Left="20"/>
+        <Label Content="Opis:" Canvas.Top="200" Canvas.Left="20"/>
+        <TextBox Text="{Binding Path=description,Mode=TwoWay}" Width="200" Height="100" TextWrapping="Wrap" Canvas.Top="230" Canvas.Left="20"/>
+        <Label Content="Gatunki:" Canvas.Top="20" Canvas.Left="250"/>
+        <TextBox Text="{Binding Path=genres,Mode=TwoWay}" Width="200" Height="100" TextWrapping="Wrap" Canvas.Top="50" Canvas.Left="250"/>
+        <Label Content="Producenci:" Canvas.Top="170" Canvas.Left="250"/>
+        <TextBox Text="{Binding Path=producers,Mode=TwoWay}" Width="200" Height="100" TextWrapping="Wrap" Canvas.Top="200" Canvas.Left="250"/>
+        <Label Content="Separator:" Canvas.Top="320" Canvas.Left="250"/>
+        <TextBox Text="{Binding Path=separator, Mode=TwoWay}" Width="80" Height="20" TextWrapping="Wrap" Canvas.Top="325" Canvas.Left="330" MaxLength="1"/>
+        <Label Content="Obraz:" Canvas.Top="20" Canvas.Left="500"/>
+        <Image Source="{Binding Path=picture_location, Mode=TwoWay}" Width="180" Height="320" Canvas.Top="50" Canvas.Left="500"/>
+        <Button Content="Wczytaj Obraz" Canvas.Left="560" Canvas.Top="20" Click="Btn_Click_Load"/>
+        <Button Content="Zapisz" Width="50" Height="20" Canvas.Left="20" Canvas.Top="350" Click="Btn_Click_Save"/>
+    </Canvas>
+</Window>

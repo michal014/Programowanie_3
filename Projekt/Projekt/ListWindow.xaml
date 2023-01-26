@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
-        Title="ListWindow" Height="600" Width="800" ResizeMode="NoResize" Closing="Window_Closing">
+        Title="Lista Pozycja" Height="600" Width="800" ResizeMode="NoResize" Closing="Window_Closing">
 
     <DataGrid ItemsSource="{Binding}" x:Name="ListDataGrid" AutoGenerateColumns="False" PreviewMouseDoubleClick="ListDataGrid_PreviewMouseDoubleClick" SelectionMode="Single" CanUserAddRows="False">
         <DataGrid.Columns>

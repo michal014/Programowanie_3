@@ -57,14 +57,8 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Initialization" />
-    <Folder Include="Stored Procedures" />
-    <Folder Include="queryes" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Initialization\videoteka_Create.sql" />
-    <None Include="queryes\ListSQL.sql" />
-    <None Include="queryes\ShowListItemSQL.sql" />
-    <None Include="queryes\MyListSQL.sql" />
-    <None Include="queryes\ShowMyListitemSQL.sql" />
   </ItemGroup>
 </Project>
