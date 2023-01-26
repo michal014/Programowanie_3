@@ -1,0 +1,29 @@
+﻿<Window x:Class="Projekt.ShowMyListitemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        Title="{Binding Path=name}" Height="600" Width="800">
+    <Canvas>
+        <TextBlock Text="{Binding Path=name}" Width="450" Height="50" FontSize="20" Canvas.Left="330" Canvas.Top="40" TextAlignment="Center"/>
+        <Image Width="280" Height="500" Source="{Binding Path=picture}" Canvas.Left="30" Canvas.Top="42"/>
+        <TextBlock Width="450" Height="200" Text="{Binding Path=description}" Canvas.Left="330" Canvas.Top="362" TextAlignment="Center" TextWrapping="Wrap"/>
+        <TextBlock Text="Ocena" FontSize="20" Width="70" Height="40" Canvas.Left="330" Canvas.Top="120"/>
+        <TextBlock Text="{Binding Path=allscore}" FontSize="20" Width="70" Height="40" Canvas.Left="330" Canvas.Top="160" TextAlignment="Center"/>
+        <TextBlock Text="Ilość odcinków" FontSize="20" Width="140" Height="40" Canvas.Left="420" Canvas.Top="120"/>
+        <TextBlock Text="{Binding Path=numberOfEpisodes}" FontSize="20" Width="65" Height="40" Canvas.Left="500" Canvas.Top="160" TextAlignment="left"/>
+        <TextBlock Text="/" x:Name="TBSlesh" FontSize="25" Width="20" Height="40" Canvas.Left="480" Canvas.Top="160"/>
+        <TextBox Text="{Binding Path=episodeProgress}" x:Name="TBepisodeProgress" PreviewTextInput="NumberValidationTextBox" TextChanged="TextValidationTextBox" FontSize="20" Width="64" Height="40" Canvas.Left="411" Canvas.Top="160" HorizontalContentAlignment="Right"/>
+        <TextBlock Text="Twoja Ocena" x:Name="LableYourScore" FontSize="20" Width="120" Height="40" Canvas.Left="590" Canvas.Top="120"/>
+        <TextBox Text="{Binding Path=score}" x:Name="TBScore" PreviewTextInput="NumberValidationTextBox" TextChanged="TextValidationTextBox2" FontSize="20" Width="40" Height="40" Canvas.Left="630" Canvas.Top="160" TextAlignment="Center"/>
+        <TextBlock Text="Gatunki" FontSize="20" Width="80" Height="40" Canvas.Left="400" Canvas.Top="205"/>
+        <TextBlock Text="{Binding Path=genre}" FontSize="12" Width="160" Height="40" Canvas.Left="360" Canvas.Top="250" TextAlignment="Center"/>
+        <TextBlock Text="Producenci" FontSize="20" Width="110" Height="40" Canvas.Left="571" Canvas.Top="205"/>
+        <TextBlock Text="{Binding Path=producer}" FontSize="12" Width="160" Height="40" Canvas.Left="550" Canvas.Top="250" TextAlignment="Center"/>
+        <Button x:Name="BtnAdd" Width="100" Height="30" FontSize="20" Canvas.Left="340" Canvas.Top="317" Click="BtnAdd_Click">Dodaj</Button>
+        <Button x:Name="BtnEdit" Width="100" Height="30" FontSize="20" Canvas.Left="476" Canvas.Top="317" Click="BtnEdit_Click">Zapisz</Button>
+        <Button x:Name="BtnDel" Width="100" Height="30" FontSize="20" Canvas.Left="610" Canvas.Top="317" Click="BtnDel_Click">Usuń</Button>
+    </Canvas>
+</Window>

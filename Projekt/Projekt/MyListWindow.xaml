@@ -1,0 +1,25 @@
+﻿<Window x:Class="Projekt.MyListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        Title="Moja Lista Pozycji" Height="600" Width="750" Closing="Window_Closing">
+    <DataGrid ItemsSource="{Binding}" x:Name="MyListDataGrid" AutoGenerateColumns="False" PreviewMouseDoubleClick="MyListDataGrid_PreviewMouseDoubleClick" SelectionMode="Single" CanUserAddRows="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding Path=id}" Header="ID" Visibility="Hidden" FontStyle="Normal"/>
+            <DataGridTextColumn Binding="{Binding Path=name}" Header="Nazwa" Width="250"/>
+            <DataGridTextColumn Binding="{Binding Path=type}" Header="Typ" Width="120"/>
+            <DataGridTextColumn Binding="{Binding Path=episodeProgress}" Header="Postęp oglądania" Width="120"/>
+            <DataGridTextColumn Binding="{Binding Path=score}" Header="Ocena" Width="120"/>
+            <DataGridTemplateColumn Header="Grafika">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding Path=picture}" Width="90" Height="160"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</Window>
