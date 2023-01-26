@@ -60,5 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Initialization\videoteka_Create.sql" />
+    <None Include="Initialization\Videoteka_Create_Example_Data.sql" />
   </ItemGroup>
 </Project>

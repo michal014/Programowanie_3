@@ -11,8 +11,8 @@ namespace Projekt
         public static string connectionString = @"Data Source=LAPTOP-SI4R27P1\MB_LOCAL;Initial Catalog=videoteka;User ID=sa;Password=zaq1@WSX;encrypt=false";
         public static ListClass selectedItemList { get; set; }
         public static MyListClass selectedItemMyList { get; set; }
-        public static int userid = 1;
-        public static bool isAdmin = true;
+        public static int userid = 0;
+        public static bool isAdmin = false;
 
         public static int encryptKey = 11;
 
