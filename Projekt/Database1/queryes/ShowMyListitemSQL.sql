@@ -10,13 +10,10 @@
 	contentrelation.status AS 'idAdded',
 	content.picture AS 'picture'
 FROM content
-JOIN contentrelation
-ON content.id = contentrelation.contentid
-JOIN users
-ON users.ID = contentrelation.userid
-JOIN (SELECT contentrelation.contentid AS 'id', AVG(contentrelation.rate) AS 'allscore' 
-		FROM contentrelation
-		GROUP BY contentrelation.contentid) AS table1
+JOIN (SELECT content.id AS 'id', AVG(ISNULL(contentrelation.rate, 0)) AS 'allscore'
+		FROM content
+		LEFT JOIN contentrelation ON content.id = contentrelation.contentid
+		GROUP BY content.id) AS table1
 ON table1.id = content.id
 JOIN (SELECT genrerelation.contentid,
              STRING_AGG(genres.name, '; ') AS 'genres'
@@ -32,4 +29,9 @@ JOIN (SELECT producerrelation.contentid,
       ON producerrelation.producerid = producer.id
       GROUP BY producerrelation.contentid) AS table3
 ON table3.contentID = content.id
+JOIN contentrelation
+ON contentrelation.contentid=content.id
+JOIN users
+ON users.ID=contentrelation.userid
+WHERE content.id=1 AND users.ID=1
 ORDER BY content.name ASC;

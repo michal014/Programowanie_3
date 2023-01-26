@@ -1,5 +1,4 @@
-﻿using Projekt.Tests;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +33,7 @@ namespace Projekt
 
             this.DataContext = listClasses;
 
-            SqlConnection connection = new SqlConnection(ConnectionString.connectionString);
+            SqlConnection connection = new SqlConnection(GlobalClass.connectionString);
             try
             {
                 listClasses.Clear();
@@ -70,14 +69,9 @@ namespace Projekt
 
         private void ListDataGrid_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectedItem.selectedItem = (ListClass)ListDataGrid.SelectedItem;
-            ShowItemWindow siw = new ShowItemWindow();
+            GlobalClass.selectedItemList = (ListClass)ListDataGrid.SelectedItem;
+            ShowListitemWindow siw = new ShowListitemWindow();
             siw.ShowDialog();
         }
-    }
-
-    public static class SelectedItem
-    {
-        public static ListClass selectedItem { get; set; }
     }
 }

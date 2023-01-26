@@ -13,7 +13,7 @@ namespace Projekt
         public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public int allscore { get; set; }
+        public float allscore { get; set; }
         public int numberOfEpisodes { get; set; }
         public int episodeProgress { get; set; }
         public int score { get; set; }
@@ -38,7 +38,7 @@ namespace Projekt
 
         }
 
-        public ShowItemClass(int id, string name, string description, int allscore, int numberOfEpisodes,int episodeProgress, int score,string genre,string producer, bool isAdded, BitmapImage picture)
+        public ShowItemClass(int id, string name, string description, float allscore, int numberOfEpisodes,int episodeProgress, int score,string genre,string producer, bool isAdded, BitmapImage picture)
         {
             this.id = id;
             this.name = name;
@@ -53,7 +53,7 @@ namespace Projekt
             this.picture = picture;
         }
 
-        public ShowItemClass(int id, string name, string description, int allscore, int numberOfEpisodes, int episodeProgress, int score, string genre, string producer, bool isAdded, string picture)
+        public ShowItemClass(int id, string name, string description, float allscore, int numberOfEpisodes, int episodeProgress, int score, string genre, string producer, bool isAdded, string picture)
         {
             this.id = id;
             this.name = name;

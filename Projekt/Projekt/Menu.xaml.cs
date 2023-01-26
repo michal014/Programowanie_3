@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Projekt
         public Menu()
         {
             InitializeComponent();
+            if(GlobalClass.isAdmin)
+            {
+                BtnAddContent.Visibility = Visibility.Visible;
+                BtnAddContent.IsEnabled = true;
+            }
         }
 
         private void Items_List_Btn(object sender, RoutedEventArgs e)
@@ -31,10 +37,10 @@ namespace Projekt
             this.Close();
         }
 
-        private void Btn_Click(object sender, RoutedEventArgs e)
+        private void My_List_Btn(object sender, RoutedEventArgs e)
         {
-            Test window = new Test();
-            window.Show();
+            MyListWindow myListWindow= new MyListWindow();
+            myListWindow.Show();
             this.Close();
         }
 
