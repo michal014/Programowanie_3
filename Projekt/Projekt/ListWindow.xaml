@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ListWindow" Height="600" Width="800" ResizeMode="NoResize" Closing="Window_Closing">
 
-    <DataGrid ItemsSource="{Binding}" x:Name="ListDataGrid" AutoGenerateColumns="False" PreviewMouseDoubleClick="ListDataGrid_PreviewMouseDoubleClick">
+    <DataGrid ItemsSource="{Binding}" x:Name="ListDataGrid" AutoGenerateColumns="False" PreviewMouseDoubleClick="ListDataGrid_PreviewMouseDoubleClick" SelectionMode="Single" CanUserAddRows="False">
         <DataGrid.Columns>
             <DataGridTextColumn Binding="{Binding Path=id}" Header="ID" Visibility="Hidden" FontStyle="Normal"/>
             <DataGridTextColumn Binding="{Binding Path=name}" Header="Nazwa" Width="230"/>

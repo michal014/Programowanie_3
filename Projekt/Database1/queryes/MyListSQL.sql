@@ -18,4 +18,4 @@ JOIN(SELECT content.id AS 'id',users.id AS 'uid',CONCAT(contentrelation.progress
 		JOIN users
 		ON users.ID = contentrelation.userid) AS table1
 ON table1.id = contentrelation.contentid AND table1.uid = contentrelation.userid
-WHERE users.ID=2;
+WHERE users.ID=x;

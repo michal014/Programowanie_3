@@ -34,7 +34,7 @@ namespace Projekt
             {
                 connection.Open();
 
-                string sql = "SELECT content.id AS 'id',\r\n\tcontent.name AS 'name',\r\n\tcontent.description AS 'description',\r\n\ttable1.allscore AS 'allscore',\r\n\tcontent.numberofepisodes AS 'numberOfEpisodes',\r\n\tcontentrelation.progress AS 'episodeProgress',\r\n\tcontentrelation.rate AS 'score',\r\n\ttable2.genres AS 'genre',\r\n\ttable3.producers AS 'producer',\r\n\tcontentrelation.status AS 'idAdded',\r\n\tcontent.picture AS 'picture'\r\nFROM content\r\nJOIN (SELECT content.id AS 'id', AVG(ISNULL(contentrelation.rate, 0)) AS 'allscore'\r\n\t\tFROM content\r\n\t\tLEFT JOIN contentrelation ON content.id = contentrelation.contentid\r\n\t\tGROUP BY content.id) AS table1\r\nON table1.id = content.id\r\nJOIN (SELECT genrerelation.contentid,\r\n             STRING_AGG(genres.name, '; ') AS 'genres'\r\n      FROM genrerelation\r\n      JOIN genres\r\n      ON genrerelation.genreid = genres.id\r\n      GROUP BY genrerelation.contentid) AS table2\r\nON table2.contentID = content.id\r\nJOIN (SELECT producerrelation.contentid, \r\n             STRING_AGG(producer.name, '; ') AS 'producers'\r\n      FROM producerrelation\r\n      JOIN producer\r\n      ON producerrelation.producerid = producer.id\r\n      GROUP BY producerrelation.contentid) AS table3\r\nON table3.contentID = content.id\r\nJOIN contentrelation\r\nON contentrelation.contentid=content.id\r\nJOIN users\r\nON users.ID=contentrelation.userid\r\nWHERE content.id='"+GlobalClass.selectedItemList.id+"' AND users.ID='"+ GlobalClass.userid +"'\r\nORDER BY content.name ASC;";
+                string sql = "EXEC ShowMyList @content_id='"+ GlobalClass.selectedItemList.id + "',@user_id='"+ GlobalClass.userid + "';";
                 SqlCommand command = new SqlCommand(sql, connection);
                 SqlDataReader dataReader = command.ExecuteReader();
                 
@@ -49,7 +49,7 @@ namespace Projekt
                 {
                     dataReader.Close();
                     command.Dispose();
-                    sql = "SELECT content.id AS 'id',\r\n\tcontent.name AS 'name',\r\n\tcontent.description AS 'description',\r\n\ttable1.allscore AS 'allscore',\r\n\tcontent.numberofepisodes AS 'numberOfEpisodes',\r\n\ttable2.genres AS 'genre',\r\n\ttable3.producers AS 'producer',\r\n\tcontent.picture AS 'picture'\r\nFROM content\r\nJOIN (SELECT content.id AS 'id', AVG(ISNULL(contentrelation.rate, 0)) AS 'allscore'\r\n\t\tFROM content\r\n\t\tLEFT JOIN contentrelation ON content.id = contentrelation.contentid\r\n\t\tGROUP BY content.id) AS table1\r\nON table1.id = content.id\r\nJOIN (SELECT genrerelation.contentid,\r\n             STRING_AGG(genres.name, '; ') AS 'genres'\r\n      FROM genrerelation\r\n      JOIN genres\r\n      ON genrerelation.genreid = genres.id\r\n      GROUP BY genrerelation.contentid) AS table2\r\nON table2.contentID = content.id\r\nJOIN (SELECT producerrelation.contentid, \r\n             STRING_AGG(producer.name, '; ') AS 'producers'\r\n      FROM producerrelation\r\n      JOIN producer\r\n      ON producerrelation.producerid = producer.id\r\n      GROUP BY producerrelation.contentid) AS table3\r\nON table3.contentID = content.id\r\nWHERE content.id='"+ GlobalClass.selectedItemList.id + "';";
+                    sql = "EXEC ShowList @content_id='" + GlobalClass.selectedItemList.id + "';";
                     command = new SqlCommand(sql, connection);
                     dataReader = command.ExecuteReader();
                     if (dataReader.Read())

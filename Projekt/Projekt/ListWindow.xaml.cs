@@ -39,7 +39,7 @@ namespace Projekt
                 listClasses.Clear();
                 connection.Open();
 
-                string sql = "SELECT content.id as 'id',\r\n\t   content.name AS 'name',\r\n       contenttype.name AS 'type',\r\n       content.numberofepisodes AS 'episodes',\r\n       table1.producers AS 'producer',\r\n       table2.genres AS 'genre',\r\n       content.picture AS 'picture'\r\nFROM content\r\nJOIN contenttype\r\nON content.type = contenttype.id\r\nJOIN (SELECT producerrelation.contentid, \r\n             STRING_AGG(producer.name, '; ') AS 'producers'\r\n      FROM producerrelation\r\n      JOIN producer\r\n      ON producerrelation.producerid = producer.id\r\n      GROUP BY producerrelation.contentid) AS table1\r\nON table1.contentID = content.id\r\nJOIN (SELECT genrerelation.contentid,\r\n             STRING_AGG(genres.name, '; ') AS 'genres'\r\n      FROM genrerelation\r\n      JOIN genres\r\n      ON genrerelation.genreid = genres.id\r\n      GROUP BY genrerelation.contentid) AS table2\r\nON table2.contentID = content.id\r\nORDER BY content.name ASC;\r\n";
+                string sql = "EXEC ListShow";
                 SqlCommand command = new SqlCommand(sql, connection);
                 SqlDataReader dataReader = command.ExecuteReader();
 

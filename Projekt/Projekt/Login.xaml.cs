@@ -37,8 +37,7 @@ namespace Projekt
                 try
                 {
                     connection.Open();
-
-                    string sql = "SELECT users.ID,users.isadmin FROM users WHERE login='" + uo.login+"' AND password='"+GlobalClass.Encrypt(uo.password,GlobalClass.encryptKey)+"'";
+                    string sql = "EXEC LoginCheck '"+ uo.login + "','"+ GlobalClass.Encrypt(uo.password, GlobalClass.encryptKey) + "';";
                     SqlCommand command = new SqlCommand(sql, connection);
                     SqlDataReader dataReader = command.ExecuteReader();
 

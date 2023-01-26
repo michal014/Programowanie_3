@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
         Title="MyListWindow" Height="600" Width="750" Closing="Window_Closing">
-    <DataGrid ItemsSource="{Binding}" x:Name="MyListDataGrid" AutoGenerateColumns="False" PreviewMouseDoubleClick="MyListDataGrid_PreviewMouseDoubleClick">
+    <DataGrid ItemsSource="{Binding}" x:Name="MyListDataGrid" AutoGenerateColumns="False" PreviewMouseDoubleClick="MyListDataGrid_PreviewMouseDoubleClick" SelectionMode="Single" CanUserAddRows="False">
         <DataGrid.Columns>
             <DataGridTextColumn Binding="{Binding Path=id}" Header="ID" Visibility="Hidden" FontStyle="Normal"/>
             <DataGridTextColumn Binding="{Binding Path=name}" Header="Nazwa" Width="250"/>

@@ -23,11 +23,7 @@ namespace Projekt
         public Menu()
         {
             InitializeComponent();
-            if(GlobalClass.isAdmin)
-            {
-                BtnAddContent.Visibility = Visibility.Visible;
-                BtnAddContent.IsEnabled = true;
-            }
+
         }
 
         private void Items_List_Btn(object sender, RoutedEventArgs e)
