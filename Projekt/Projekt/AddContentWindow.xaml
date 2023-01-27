@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
-        Title="AddContentWindow" Height="450" Width="800" Closing="Window_Closing">
+        WindowStartupLocation="CenterScreen"
+        Title="AddContentWindow" Height="450" Width="800" ResizeMode="NoResize" Closing="Window_Closing">
     <Canvas>
         <Label Content="Nazwa:" Canvas.Top="20" Canvas.Left="20"/>
         <TextBox Text="{Binding Path=name,Mode=TwoWay}" Width="200" Height="20" Canvas.Top="50" Canvas.Left="20"/>

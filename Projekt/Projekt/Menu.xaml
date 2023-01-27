@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
-        Title="Menu" Height="320" Width="215">
+        WindowStartupLocation="CenterScreen"
+        Title="Menu" Height="320" Width="215" ResizeMode="NoResize">
     <Canvas>
         <Label FontSize="40" FontFamily="Comis Sans MS" Canvas.Left="44" Canvas.Top="10">Menu</Label>
         <Button Width="150" Height="30" Canvas.Left="25" Canvas.Top="80" Click="Items_List_Btn">Lista Pozycji</Button>
