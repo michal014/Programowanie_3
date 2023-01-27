@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="{Binding Path=name}" Height="600" ResizeMode="NoResize" Width="800">
+    <Window.Icon>
+        <BitmapImage UriSource="Resources/icon.png"/>
+    </Window.Icon>
     <Canvas>
         <TextBlock Text="{Binding Path=name}" Width="450" Height="50" FontSize="20" Canvas.Left="330" Canvas.Top="40" TextAlignment="Center"/>
         <Image Width="280" Height="500" Source="{Binding Path=picture}" Canvas.Left="30" Canvas.Top="42"/>
