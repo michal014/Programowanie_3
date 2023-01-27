@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="AddContentWindow" Height="450" Width="800" ResizeMode="NoResize" Closing="Window_Closing">
+    <Window.Icon>
+        <BitmapImage UriSource="Resources/icon.png"/>
+    </Window.Icon>
     <Canvas>
         <Label Content="Nazwa:" Canvas.Top="20" Canvas.Left="20"/>
         <TextBox Text="{Binding Path=name,Mode=TwoWay}" Width="200" Height="20" Canvas.Top="50" Canvas.Left="20"/>

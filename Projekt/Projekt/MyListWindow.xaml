@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Moja Lista Pozycji" Height="600" Width="750" ResizeMode="NoResize" Closing="Window_Closing">
+    <Window.Icon>
+        <BitmapImage UriSource="Resources/icon.png"/>
+    </Window.Icon>
     <DataGrid ItemsSource="{Binding}" x:Name="MyListDataGrid" AutoGenerateColumns="False" PreviewMouseDoubleClick="MyListDataGrid_PreviewMouseDoubleClick" SelectionMode="Single" CanUserAddRows="False">
         <DataGrid.Columns>
             <DataGridTextColumn Binding="{Binding Path=id}" Header="ID" Visibility="Hidden" FontStyle="Normal"/>
