@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
-        Title="Logowanie" Height="300" Width="400">
+        WindowStartupLocation="CenterScreen"
+        Title="Logowanie" Height="300" Width="400" ResizeMode="NoResize">
     <Canvas>
         <Label Content="Login" FontSize="20" Canvas.Left="50" Canvas.Top="30"/>
         <TextBox Text="{Binding Path=login,Mode=TwoWay}" Height="30" FontSize="20" Width="300" Canvas.Left="50" Canvas.Top="70"/>
