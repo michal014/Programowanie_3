@@ -1,13 +1,7 @@
 ﻿USE [master]
 GO
-/****** Object:  Database [videoteka]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Database [videoteka]    Script Date: 28.01.2023 03:51:21 ******/
 CREATE DATABASE [videoteka]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'videoteka', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MB_LOCAL\MSSQL\DATA\videoteka.mdf' , SIZE = 139264KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'videoteka_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MB_LOCAL\MSSQL\DATA\videoteka_log.ldf' , SIZE = 139264KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
- WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
 ALTER DATABASE [videoteka] SET COMPATIBILITY_LEVEL = 150
 GO
@@ -82,7 +76,7 @@ ALTER DATABASE [videoteka] SET QUERY_STORE = OFF
 GO
 USE [videoteka]
 GO
-/****** Object:  Table [dbo].[content]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Table [dbo].[content]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -100,7 +94,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[contentrelation]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Table [dbo].[contentrelation]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -118,7 +112,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[contenttype]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Table [dbo].[contenttype]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +126,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[genrerelation]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Table [dbo].[genrerelation]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -147,7 +141,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[genres]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Table [dbo].[genres]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -161,7 +155,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[producer]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Table [dbo].[producer]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -175,7 +169,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[producerrelation]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Table [dbo].[producerrelation]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -190,7 +184,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[users]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  Table [dbo].[users]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -289,7 +283,19 @@ GO
 ALTER TABLE [dbo].[producerrelation]  WITH CHECK ADD FOREIGN KEY([producerid])
 REFERENCES [dbo].[producer] ([id])
 GO
-/****** Object:  StoredProcedure [dbo].[Get1contentidbyDesc]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[AddContentToUser]    Script Date: 28.01.2023 03:51:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[AddContentToUser] @contentid INT,@userid INT
+AS
+BEGIN
+    INSERT INTO contentrelation (contentid, userid)
+    VALUES (@contentid, @userid)
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Get1contentidbyDesc]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -300,7 +306,7 @@ BEGIN
     SELECT id FROM content ORDER BY id DESC
 END
 GO
-/****** Object:  StoredProcedure [dbo].[Get1idfromcontenttypebyDesc]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[Get1idfromcontenttypebyDesc]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -311,7 +317,7 @@ BEGIN
     SELECT id FROM contenttype ORDER BY id DESC;
 END
 GO
-/****** Object:  StoredProcedure [dbo].[GetContentTypeIDByName]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[GetContentTypeIDByName]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -322,7 +328,7 @@ BEGIN
     SELECT id FROM contenttype WHERE name = @x
 END
 GO
-/****** Object:  StoredProcedure [dbo].[GetGenreIdByName]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[GetGenreIdByName]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -333,7 +339,7 @@ BEGIN
     SELECT id FROM genres WHERE name = @name;
 END
 GO
-/****** Object:  StoredProcedure [dbo].[GetProducerIDByName]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[GetProducerIDByName]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -345,7 +351,7 @@ BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[InsertContent]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[InsertContent]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -362,7 +368,7 @@ BEGIN
     VALUES (@x, @y, @z, @w, @u)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[InsertContenttypeName]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[InsertContenttypeName]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -373,7 +379,7 @@ BEGIN
     INSERT INTO contenttype (name) values (@name);
 END
 GO
-/****** Object:  StoredProcedure [dbo].[InsertGenre]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[InsertGenre]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -385,7 +391,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[InsertGenrerelation]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[InsertGenrerelation]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -397,7 +403,7 @@ BEGIN
     VALUES (@contentid, @genreid)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[InsertProducer]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[InsertProducer]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -408,7 +414,7 @@ BEGIN
     INSERT INTO producer (name) values (@name);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[InsertProducerrelation]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[InsertProducerrelation]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -419,7 +425,7 @@ BEGIN
     INSERT INTO producerrelation (contentid,producerid) VALUES (@contentid, @producerid)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[InsertUser]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[InsertUser]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -431,7 +437,7 @@ BEGIN
     VALUES (@login, @password)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[ListShow]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[ListShow]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -467,7 +473,7 @@ BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[LoginCheck]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[LoginCheck]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -479,7 +485,7 @@ BEGIN
     WHERE login = @login AND password = @password
 END
 GO
-/****** Object:  StoredProcedure [dbo].[MyListShow]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[MyListShow]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -514,7 +520,18 @@ BEGIN
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[ShowList]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[RemoveContentFromUser]    Script Date: 28.01.2023 03:51:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[RemoveContentFromUser] @contentid INT,@userid INT
+AS
+BEGIN
+    DELETE contentrelation WHERE contentid=@contentid AND userid=@userid
+END
+GO
+/****** Object:  StoredProcedure [dbo].[ShowList]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -554,7 +571,7 @@ BEGIN
 END;
 
 GO
-/****** Object:  StoredProcedure [dbo].[ShowMyList]    Script Date: 27.01.2023 00:02:18 ******/
+/****** Object:  StoredProcedure [dbo].[ShowMyList]    Script Date: 28.01.2023 03:51:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -600,6 +617,19 @@ BEGIN
     WHERE content.id = @content_id AND users.ID = @user_id
 END;
 
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateContentToUser]    Script Date: 28.01.2023 03:51:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[UpdateContentToUser] @rate INT,@progress INT,@contentid INT,@userid INT
+AS
+BEGIN
+    UPDATE contentrelation
+    SET rate = @rate, progress = @progress
+    WHERE contentid = @contentid AND userid = @userid
+END
 GO
 USE [master]
 GO
