@@ -113,14 +113,14 @@ namespace Projekt
             SqlConnection connection = new SqlConnection(GlobalClass.connectionString);
             connection.Open();
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "INSERT INTO contentrelation (contentid,userid) values('" + GlobalClass.selectedItemList.id + "','" + GlobalClass.userid + "');";
+            string sql = "EXEC AddContentToUser " + GlobalClass.selectedItemMyList.id + "," + GlobalClass.userid + ";";
             SqlCommand command = new SqlCommand(sql, connection);
             adapter.InsertCommand = command;
             adapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
             connection.Close();
-            ShowListitemWindow sliw = new ShowListitemWindow();
-            sliw.Show();
+            ShowMyListitemWindow smliw = new ShowMyListitemWindow();
+            smliw.Show();
             this.Close();
         }
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
@@ -128,7 +128,7 @@ namespace Projekt
             SqlConnection connection = new SqlConnection(GlobalClass.connectionString);
             connection.Open();
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "UPDATE contentrelation SET rate='" + showItems[0].score + "', progress='" + showItems[0].episodeProgress + "' WHERE contentid='" + GlobalClass.selectedItemMyList.id + "' AND userid='" + GlobalClass.userid + "';";
+            string sql = "EXEC UpdateContentToUser " + showItems[0].score + "," + showItems[0].episodeProgress + "," + GlobalClass.selectedItemMyList.id + "," + GlobalClass.userid + ";";
             SqlCommand command = new SqlCommand(sql, connection);
             adapter.UpdateCommand = command;
             adapter.UpdateCommand.ExecuteNonQuery();
@@ -144,7 +144,7 @@ namespace Projekt
             SqlConnection connection = new SqlConnection(GlobalClass.connectionString);
             connection.Open();
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sql = "DELETE contentrelation WHERE contentid='" + GlobalClass.selectedItemMyList.id + "' AND userid='" + GlobalClass.userid + "';";
+            string sql = "EXEC RemoveContentFromUser " + GlobalClass.selectedItemMyList.id + "," + GlobalClass.userid + ";";
             SqlCommand command = new SqlCommand(sql, connection);
             adapter.DeleteCommand = command;
             adapter.DeleteCommand.ExecuteNonQuery();

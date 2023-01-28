@@ -148,7 +148,6 @@ namespace Projekt
                         datareader.Close();
                         command.Dispose();
 
-                        //sql = "INSERT INTO content (name,type,numberofepisodes,description,picture) values ('" + acc.name + "','" + sqlint + "','" + acc.numberofepisodes + "','" + acc.description + "','" + base64String + "');";
                         sql = "EXEC InsertContent '" + acc.name + "','" + sqlint + "','" + acc.numberofepisodes + "','" + acc.description + "','" + base64String + "';";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = command;
@@ -169,7 +168,6 @@ namespace Projekt
                     {
                         connection.Open();
 
-                        //sql = "INSERT INTO content (name,type,numberofepisodes,description,picture) values ('" + acc.name + "','" + acc.type + "','" + acc.numberofepisodes + "','" + acc.description + "','" + base64String + "');";
                         sql = "EXEC InsertContent '" + acc.name + "','" + Convert.ToInt32(acc.type) + "','" + acc.numberofepisodes + "','" + acc.description + "','" + base64String + "';";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = command;
@@ -186,7 +184,6 @@ namespace Projekt
                 try
                 {
                     connection.Open();
-                    //sql = "SELECT id FROM content ORDER BY id DESC";
                     sql = "EXEC Get1contentidbyDesc";
                     command = new SqlCommand(sql, connection);
                     datareader = command.ExecuteReader();
@@ -220,7 +217,6 @@ namespace Projekt
                 {
                     Exist = false;
                     sqlint = 0;
-                    //sql = "SELECT id FROM genres WHERE name='" + s + "'";
                     sql = "EXEC GetGenreIdByName'" + s + "'";
                     command = new SqlCommand(sql, connection);
                     datareader = command.ExecuteReader();
@@ -236,7 +232,6 @@ namespace Projekt
 
                     if (!Exist)
                     {
-                        //sql = "INSERT INTO genres (name) values ('" + s + "');";
                         sql = "EXEC InsertGenre '" + s + "';";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = command;
@@ -244,7 +239,6 @@ namespace Projekt
 
                         command.Dispose();
 
-                        //sql = "SELECT id FROM genres WHERE name='" + s + "'";
                         sql = "EXEC GetGenreIdByName'" + s + "'";
                         command = new SqlCommand(sql, connection);
                         datareader = command.ExecuteReader();
@@ -257,7 +251,6 @@ namespace Projekt
                         datareader.Close();
                         command.Dispose();
 
-                        //sql = "INSERT INTO genrerelation (contentid,genreid) values ('" + contentid + "','"+ sqlint +"');";
                         sql = "EXEC InsertGenrerelation '" + contentid + "','" + sqlint + "';";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = command;
@@ -267,7 +260,6 @@ namespace Projekt
                     }
                     else
                     {
-                        //sql = "INSERT INTO genrerelation (contentid,genreid) values ('" + contentid + "','" + sqlint + "');";
                         sql = "EXEC InsertGenrerelation '" + contentid + "','" + sqlint + "';";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = command;
@@ -293,7 +285,6 @@ namespace Projekt
                 {
                     Exist = false;
                     sqlint = 0;
-                    //sql = "SELECT id FROM producer WHERE name='" + s + "'";
                     sql = "EXEC GetProducerIDByName'" + s + "'";
                     command = new SqlCommand(sql, connection);
                     datareader = command.ExecuteReader();
@@ -309,7 +300,6 @@ namespace Projekt
 
                     if (!Exist)
                     {
-                        //sql = "INSERT INTO producer (name) values ('" + s + "');";
                         sql = "EXEC InsertProducer '" + s + "';";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = command;
@@ -317,7 +307,6 @@ namespace Projekt
 
                         command.Dispose();
 
-                        //sql = "SELECT id FROM producer WHERE name='" + s + "'";
                         sql = "EXEC GetProducerIDByName'" + s + "'";
                         command = new SqlCommand(sql, connection);
                         datareader = command.ExecuteReader();
@@ -330,7 +319,6 @@ namespace Projekt
                         datareader.Close();
                         command.Dispose();
 
-                        //sql = "INSERT INTO producerrelation (contentid,producerid) values ('" + contentid + "','" + sqlint + "');";
                         sql = "EXEC InsertProducerrelation'" + contentid + "','" + sqlint + "';";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = command;
@@ -340,7 +328,6 @@ namespace Projekt
                     }
                     else
                     {
-                        //sql = "INSERT INTO producerrelation (contentid,producerid) values ('" + contentid + "','" + sqlint + "');";
                         sql = "EXEC InsertProducerrelation'" + contentid + "','" + sqlint + "';";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = command;
